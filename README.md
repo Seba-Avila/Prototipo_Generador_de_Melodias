@@ -3,11 +3,15 @@
 -MUESTRAS:
 Las muestras fueron obtenidas del siguiente código, aplicable para todas las frecuencias al mantener la misma relacion entre frecuencia de nota, frecuencia de muestreo, cantidad de muestras y frecuencia de PWM:
 
-float F1 = 44;      //Frecuencia de la nota
-double Fs = 8800;   //Fs=Frecuencia nota*muestras                                    
-int n1 = 200;       //numero de muestras
-double t=0;         //instante de muestra
-byte samples1[200]; //vector donde guardar las muestras
+float F1 = 44;                  //Frecuencia de la nota
+
+double Fs = 8800;               //Fs=Frecuencia nota*muestras    
+
+int n1 = 200;                   //numero de muestras
+
+double t=0;                     //instante de muestra
+
+byte samples1[200];             //vector donde guardar las muestras
 
 for (int m = 0; m < n1; m++){
     t = (double) ((m/Fs)*1000);                                       //multiplico el valor de t ya que, al ser tan pequeño,                                                                                     a la hora de calcular, sus decimales se pierden y figura como 0
