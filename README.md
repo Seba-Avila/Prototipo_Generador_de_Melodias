@@ -11,9 +11,9 @@ double t=0;           //instante de muestra
 byte samples1[200];   //vector donde guardar las muestras
 
 for (int m = 0; m < n1; m++){
-    t = (double) ((m/Fs)*1000);        //multiplico el valor de t ya que, al ser tan pequeño, sus decimales se pierden y figura como 0.
+    t = (double) ((m/Fs)*1000);                                       //multiplico el valor de t ya que, al ser tan pequeño, sus decimales se pierden y figura como 0.
     samples1[m] = (byte) (127.0 * sin(2 * PI * 0.044 *  t) + 127.0 ); //calculo el valor de la senoidal en cada instante de t. Notar que la frecuencia fue reducida en proporcion a la cantidad de veces que se aumento t para que el calculo sea el mismo.
-    if(m==0){Serial.print("muestra1:");}                 //en las siguientes lineas imprimo los valores obtenidos para poder copiarlos.
+    if(m==0){Serial.print("muestra1:");}                              //en las siguientes lineas imprimo los valores obtenidos para poder copiarlos.
     Serial.print(samples1[m]);
     Serial.println(",");
   }
