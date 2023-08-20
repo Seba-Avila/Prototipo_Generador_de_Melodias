@@ -3,7 +3,7 @@
 -MUESTRAS:
 Las muestras fueron obtenidas del siguiente código, aplicable para todas las frecuencias al mantener la misma relacion entre frecuencia de nota (F1), frecuencia de muestreo (Fs=Frecuencia nota*muestras), cantidad de muestras (n1) y frecuencia de PWM:
 
-
+```
 float F1 = 44;
 double Fs = 8800;              
 int n1 = 200; 
@@ -18,7 +18,7 @@ for (int m = 0; m < n1; m++){
     Serial.print(samples1[m]);
     Serial.println(",");
   }
-
+```
 
 Las muestras fueron guardadas en la memoria flash, de programa, con tal de no ocupar espacio de RAM y asegurarlas en una memoria no volatil.
 
