@@ -4,21 +4,17 @@
 Las muestras fueron obtenidas del siguiente código, aplicable para todas las frecuencias al mantener la misma relacion entre frecuencia de nota (F1), frecuencia de muestreo (Fs=Frecuencia nota*muestras), cantidad de muestras (n1) y frecuencia de PWM:
 
 
-
-
 float F1 = 44;
 double Fs = 8800;              
 int n1 = 200; 
-double t=0;                     //instante de muestra
+double t=0;
 
-byte samples1[200];             //vector donde guardar las muestras
+byte samples1[200];
 
 for (int m = 0; m < n1; m++){
-    t = (double) ((m/Fs)*1000);                                       //multiplico el valor de t ya que, al ser tan pequeño,                                                                                     a la hora de calcular, sus decimales se pierden y figura como 0
-    
-    samples1[m] = (byte) (127.0 * sin(2 * PI * 0.044 *  t) + 127.0 ); //calculo el valor de la senoidal en cada instante de t. Notar que                                                                            la frecuencia fue reducida en proporcion a la cantidad de                                                                                 veces que se aumento t para que el calculo sea el mismo
-    
-    if(m==0){Serial.print("muestra1:");}                  //en las siguientes lineas imprimo los valores obtenidos para poder copiarlos.
+    t = (double) ((m/Fs)*1000);
+    samples1[m] = (byte) (127.0 * sin(2 * PI * 0.044 *  t) + 127.0 );
+    if(m==0){Serial.print("muestra1:");} 
     Serial.print(samples1[m]);
     Serial.println(",");
   }
