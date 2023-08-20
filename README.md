@@ -1,14 +1,11 @@
 ﻿# Prototipo_Generador_de_Melodias
 
 -MUESTRAS:
-Las muestras fueron obtenidas del siguiente código, aplicable para todas las frecuencias al mantener la misma relacion entre frecuencia de nota, frecuencia de muestreo, cantidad de muestras y frecuencia de PWM:
+Las muestras fueron obtenidas del siguiente código, aplicable para todas las frecuencias al mantener la misma relacion entre frecuencia de nota (F1), frecuencia de muestreo (Fs=Frecuencia nota*muestras), cantidad de muestras (n1) y frecuencia de PWM:
 
-float F1 = 44;                  //Frecuencia de la nota
-
-double Fs = 8800;               //Fs=Frecuencia nota*muestras    
-
-int n1 = 200;                   //numero de muestras
-
+float F1 = 44;
+double Fs = 8800;              
+int n1 = 200; 
 double t=0;                     //instante de muestra
 
 byte samples1[200];             //vector donde guardar las muestras
