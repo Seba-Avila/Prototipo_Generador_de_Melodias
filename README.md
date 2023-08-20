@@ -3,6 +3,9 @@
 -MUESTRAS:
 Las muestras fueron obtenidas del siguiente código, aplicable para todas las frecuencias al mantener la misma relacion entre frecuencia de nota (F1), frecuencia de muestreo (Fs=Frecuencia nota*muestras), cantidad de muestras (n1) y frecuencia de PWM:
 
+
+
+
 float F1 = 44;
 double Fs = 8800;              
 int n1 = 200; 
