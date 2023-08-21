@@ -242,7 +242,7 @@ void setup() {
   /*Más aclaraciones en archivo README*/
     
   ledcSetup(0, 200000, 8); //Aqui configuro la frecuencia y resolucion del canal PWM que voy a utilizar
-  ledcAttachPin(32 , 0);   //Aqui asigno los canales configurados a pines de la placa
+  ledcAttachPin(19 , 0);   //Aqui asigno los canales configurados a un pin de la placa
 
   /*Aqui configuro y asigno a pin el canal de la PWM para el detector de nota. Posee una resolucion de 8
   bits a diferencia de la resolucion de 12 del ADC ya que permite que la diferencia de bits entre el umbral y los
