@@ -508,16 +508,16 @@ void Microfono(){
     while(buffer[0] != 'P' && buffer[0] != 'V'){  //mientras los datos recibidos no correspondan al boton de Parada o Volver
         while(!SerialBT.available()){             //ejecuto la siguiente acción mientras no se reciban datos
             Res = 2000 - analogRead(36);          //habiendo configurado y medido el umbral, establecemos una diferencia entre ese valor y el valor leído
-            if(abs(Res)>150){                     //como el valor del umbral no es completamente estable, suelen haber variaciones minimas, pero si la diferencia supera los 100 bits
-                ledcWrite(0, abs(Res));           //enciendo el LED con un ciclo de trabajo correspondiente a la diferencia. El valor esta tomado como un absoluto porque los picos aparecen con valores tanto mayores como menores al umbral
+            if(abs(Res)>150){                     //como el valor del umbral no es completamente estable, suelen haber variaciones minimas, pero si la diferencia supera los 150 bits
+                ledcWrite(1, abs(Res));           //enciendo el LED con un ciclo de trabajo correspondiente a la diferencia. El valor esta tomado como un absoluto porque los picos aparecen con valores tanto mayores como menores al umbral
                 delay(1);
             }else{
-                ledcWrite(0, 0);                  //si esa diferencia no se cumple, apago la salida.
+                ledcWrite(1, 0);                  //si esa diferencia no se cumple, apago la salida.
             }              
             Serial.println(analogRead(36));
             delay(1);
         }
         cache=SerialBT.readBytesUntil('\n', buffer, 3); //leo el dato que rompió el bucle. Si es V, romperá tambien el bucle principal de Detector. Si es P, romperá solo este bucle y volverá a esperar que se presione boton de Comienzo
     }
-    ledcWrite(0, 0);                                   //apago la salida
+    ledcWrite(1, 0);                                    //apago la salida
 }
