@@ -9,7 +9,7 @@ float F1 = 44;        //Frecuencia de la nota
 double Fs = 2200;     //Fs=Frecuencia nota*muestras          
 int n1 = 50;         //numero de muestras
 double t=0;           //instante de muestra
-byte samples1[200];   //vector donde guardar las muestras
+byte samples1[50];   //vector donde guardar las muestras
 
 for (int m = 0; m < n1; m++){
     t = (double) ((m/Fs)*1000);                                       //multiplico el valor de t ya que, al ser tan pequeño, sus decimales se pierden y figura como 0.
@@ -27,6 +27,7 @@ Las muestras fueron guardadas en la memoria flash, de programa, con tal de no oc
 Habiendo verificado las frecuencias a la que mejor trabajan las PWM de las notas (principalmente a la hora de filtrarlas), determinamos que, al configurarlas, hacerlo con una frecuencia unas 15 veces mayor a la de muestreo otorgaba resultados óptimos para el filtro que construimos. Para iniciar, elegimos notas unicamente de la primer octava, con frecuencias de 32,70 Hz a 61,74 Hz. Redondeando los valores, las frecuencias de muestreo correspondientes van de 6600 Hz a 12400 Hz, mientras que las de PWM van de 99000 Hz a 186000 Hz. Por eso, utilizando un canal a 200000 Hz tenemos más que suficiente velocidad para recorrer las muestras de todas las notas. La resolución es la misma que la de muestreo, 8 bits.
 
 **Actualización preentrega**
+
 Las frecuencias de muestreo se redujeron a 50 veces la frecuencia de la nota (al reducir a 50 la cantidad de muestras). Habiendo bajado la velocidad de muestreo, logramos una PWM de menor frecuencia (unos 10KHZ, debido a las limitaciones producto del circuito de potencia) que, aunque no respeta la relacion de 15 veces la fmuestreo que se expuso antes, funciona más que bien para representar la senoidal y mover el motor.
 
 -LECTURA DE DATOS:
